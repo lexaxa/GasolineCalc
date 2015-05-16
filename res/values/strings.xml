@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hi energy!</string>
+    <string name="app_name">GasolineCalc</string>
+    <string name="days">дней</string>
+    <string name="km_per_day">км/день</string>
+    <string name="km_per_month">км/мес</string>
+    <string name="litres">литры</string>
+    <string name="consumption">расход</string>
+    <string name="mileage">пробег</string>
+    <string name="total_value">общ. стоимость</string>
+    <string name="litrescost">Стоимость литра</string>
+    <string name="butStart">Старт</string>
+    <string name="butOptions">Настройки</string>
+    <string name="butExit">Выход</string>
+    <string name="butStats">Статистика</string>
+    <string name="log">Лог</string>
+</resources>
