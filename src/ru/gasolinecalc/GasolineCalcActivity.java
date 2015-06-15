@@ -6,20 +6,13 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.KeyEvent;
-<<<<<<< HEAD
-import android.view.MenuItem;
-=======
->>>>>>> origin/new_leaf
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-<<<<<<< HEAD
 import android.support.v7.widget.Toolbar;
-=======
->>>>>>> origin/new_leaf
 
 public class GasolineCalcActivity extends Activity implements OnKeyListener, OnClickListener{
 	
@@ -37,25 +30,14 @@ public class GasolineCalcActivity extends Activity implements OnKeyListener, OnC
     TextView calcTotalValue2;
 	
 	TextView log;
-
-<<<<<<< HEAD
 	private Toolbar toolbar;
-
-=======
->>>>>>> origin/new_leaf
 	SharedPreferences sPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calc);
-<<<<<<< HEAD
-
-		initToolbar();
-
-=======
-        
->>>>>>> origin/new_leaf
+		initToolbar();       
         cost = (EditText)findViewById(R.id.cost);
         cost.setText("36.6");
         days = (EditText)findViewById(R.id.editDays);
@@ -83,37 +65,25 @@ public class GasolineCalcActivity extends Activity implements OnKeyListener, OnC
         
         loadText();
     }
-<<<<<<< HEAD
-
 	private void initToolbar() {
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setTitle(R.string.app_name);
-        toolbar.setOnMenuItemClickListener( new Toolbar.OnMenuItemClickListener(){
-            public boolean onMenuItemClick(MenuItem menuItem){
-                return false;
-            }
-        });
+		toolbar.setOnMenuItemClickListener( new Toolbar.OnMenuItemClickListener(){
+			public boolean onMenuItemClick(MenuItem menuItem){
+				return false;
+			}
+		});
 
-        toolbar.inflateMenu(R.menu.settings);
+		toolbar.inflateMenu(R.menu.settings);
 
 	}
-
 	/*
-     дней км/день editDays						editKmDays
-     литры		editLitres						calcConsumption1*editConsumption/100
-     расход		editLitres/calcMileage1*100		editConsumption
-     пробег		editDays*editKmDays				editLitres/editConsumption*100
-     общ. ст.	cost*editLitres					cost*calcLitres
-    *//*
-=======
-/*
  дней км/день editDays						editKmDays
  литры		editLitres						calcConsumption1*editConsumption/100
  расход		editLitres/calcMileage1*100		editConsumption
  пробег		editDays*editKmDays				editLitres/editConsumption*100
  общ. ст.	cost*editLitres					cost*calcLitres
 *//*
->>>>>>> origin/new_leaf
     @Override
     protected void onSaveInstanceState(Bundle outState) {
     	super.onSaveInstanceState(outState);
