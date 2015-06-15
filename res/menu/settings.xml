@@ -7,8 +7,12 @@
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
+<<<<<<< HEAD
         app:showAsAction="ifRoom"
             android:icon="@drawable/gas_station"/>
+=======
+        android:showAsAction="ifRoom"/>
+>>>>>>> origin/new_leaf
     
 
 </menu>
