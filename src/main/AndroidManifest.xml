@@ -5,33 +5,14 @@
     android:versionName="1.0" >
 
     <uses-sdk
-<<<<<<< HEAD
         android:minSdkVersion="18"
-        android:targetSdkVersion="21" />
-
-    <application
-        android:icon="@drawable/gas_station"
-        android:label="@string/app_name" android:name="CalcApp">
-        <activity 
-            android:name="ru.gasolinecalc.Main"
-            android:label="@string/app_name">
-        </activity>
-        <activity
-            android:name="ru.gasolinecalc.GasolineCalcActivity"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-=======
-        android:minSdkVersion="7"
         android:targetSdkVersion="21" />
 
     <application
         android:name=".CalcApp"
         android:icon="@drawable/gas_station"
-        android:label="@string/app_name" >
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat">
         <activity
             android:name=".Main"
             android:label="@string/app_name" >
@@ -52,7 +33,5 @@
             android:name=".Settings"
             android:label="@string/title_activity_settings" >
         </activity>
->>>>>>> origin/new_leaf
     </application>
-
 </manifest>

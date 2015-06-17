@@ -1,20 +1,33 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+task getHomeDir << {
+    println gradle.gradleHomeDir
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
 buildscript {
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
-        compile "com.android.support:appcompat-v7:18.0.+"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.android.tools.build:gradle:1.1.3'
     }
 }
+apply plugin: 'com.android.application'
 
-allprojects {
-    repositories {
-        jcenter()
-    }
+android{
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies{
+//    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:20.0.0'
+    compile 'com.android.support:support-v4:20.0.0'
 }

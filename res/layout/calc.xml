@@ -5,17 +5,12 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     tools:context=".GasolineCalcActivity"
-<<<<<<< HEAD
-              android:background="@color/mainBackground"
+    android:background="@color/mainBackground"
     >
 
     <include android:id="@+id/toolbar"
             layout="@layout/toolbar"></include>
 
-=======
-    >
-
->>>>>>> origin/new_leaf
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
