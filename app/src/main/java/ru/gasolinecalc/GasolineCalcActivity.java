@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
+
+import java.text.NumberFormat;
 
 public class GasolineCalcActivity extends Activity implements OnKeyListener, OnClickListener{
 	
@@ -35,12 +37,17 @@ public class GasolineCalcActivity extends Activity implements OnKeyListener, OnC
 	TextView log;
 	private Toolbar toolbar;
 	SharedPreferences sPref;
+    private NumberFormat numberFormat;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calc);
-		initToolbar();       
+
+		initToolbar();
+        numberFormat = NumberFormat.getNumberInstance();
+        numberFormat.setMaximumFractionDigits(2);
+
         cost = (EditText)findViewById(R.id.cost);
         cost.setText("36.6");
         days = (EditText)findViewById(R.id.editDays);
@@ -69,6 +76,7 @@ public class GasolineCalcActivity extends Activity implements OnKeyListener, OnC
         loadText();
     }
 	private void initToolbar() {
+        if (findViewById(R.id.toolbar).isInEditMode()) return;
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setTitle(R.string.app_name);
 		toolbar.setOnMenuItemClickListener( new Toolbar.OnMenuItemClickListener(){
@@ -199,7 +207,7 @@ public class GasolineCalcActivity extends Activity implements OnKeyListener, OnC
 		double a = getVal(days);
 		double b = getVal(kmDays);
 		double res = (a*b);
-		calcMileage1.setText(String.format("%.2f", res) + "");
+		calcMileage1.setText(numberFormat.format(res));
     }
     
     public void setCalcMileage2(){
@@ -207,15 +215,15 @@ public class GasolineCalcActivity extends Activity implements OnKeyListener, OnC
     	double a = getVal(litres);
 		double b = getVal(consumption);
 		double res = 100*(a/b);
-		calcMileage2.setText(String.format("%.2f", res) + "");
+		calcMileage2.setText(numberFormat.format(res));
     }
     
     public void setCalcConsumption(){
     	//editLitres/calcMileage1*100
 		double a = getVal(litres);
-		double b = getVal(calcMileage1);
+        double b = getVal(calcMileage1);
 		double res = 100*(a/b);
-		calcConsumption.setText(String.format("%.2f", res) + "");
+		calcConsumption.setText(numberFormat.format(res));
     }
 
     public void setCalcLitres(){
@@ -223,7 +231,7 @@ public class GasolineCalcActivity extends Activity implements OnKeyListener, OnC
 		double a = getVal(calcMileage1);
 		double b = getVal(consumption);
 		double res = (a*b)/100;
-		calcLitres.setText(String.format("%.2f", res)+"");
+		calcLitres.setText(numberFormat.format(res));
     }
     
     public void setCalcTotalValue1(){
@@ -231,7 +239,7 @@ public class GasolineCalcActivity extends Activity implements OnKeyListener, OnC
     	double a = getVal(cost);
 		double b = getVal(litres);
 		double res = (a*b);
-		calcTotalValue1.setText(String.format("%.2f", res)+"");
+		calcTotalValue1.setText(numberFormat.format(res));
     }
     
     public void setCalcTotalValue2(){
@@ -239,12 +247,12 @@ public class GasolineCalcActivity extends Activity implements OnKeyListener, OnC
 		double a = getVal(cost);
 		double b = getVal(calcLitres);
 		double res = (a*b);
-		calcTotalValue2.setText(String.format("%.2f", res)+"");
+		calcTotalValue2.setText(numberFormat.format(res));
     }
 
     public double getVal(TextView item){
     	if(item.getText().length() > 0){
-        	return Double.parseDouble(item.getText().toString());
+        	return Double.parseDouble(item.getText().toString().replace(",","."));
     	}else{
     		return 1.0;
     	}

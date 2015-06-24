@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="AppTheme.Base"/>
-    <style name="AppTheme.Base" parent="AppTheme.Base">
+    <style name="AppTheme.Base" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="windowActionBar">false</item>
     </style>
     <style name="Text">
         <item name="android:textColor">#f0f</item>

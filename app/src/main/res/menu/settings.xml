@@ -8,6 +8,24 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         android:icon="@drawable/gas_station"
-        android:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="101"
+        android:title="About"
+        android:icon="@drawable/abc_ic_menu_paste_mtrl_am_alpha"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/reserved"
+        android:orderInCategory="101"
+        android:title="Reserved"
+        android:icon="@drawable/abc_btn_radio_material"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/statistics"
+        android:orderInCategory="101"
+        android:title="Statistics"
+        android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+        app:showAsAction="ifRoom"/>
 
 </menu>
